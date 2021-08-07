@@ -14,8 +14,8 @@ namespace PnP.PowerShell.Commands.UserProfiles
     [Cmdlet(VerbsCommon.New, "PnPUPABulkImportJob")]
     public class NewUPABulkImportJob : PnPAdminCmdlet
     {
-        private const string ParameterSet_UPLOADFILE = "Upload file";
-        private const string ParameterSet_URL = "Provide URL";
+        private const string ParameterSet_UPLOADFILE = "Submit up a new user profile bulk import job from local file";
+        private const string ParameterSet_URL = "Submit up a new user profile bulk import job from url";
 
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSet_UPLOADFILE)]
         public string Folder;
@@ -23,7 +23,7 @@ namespace PnP.PowerShell.Commands.UserProfiles
         [Parameter(Mandatory = true, Position = 1, ParameterSetName = ParameterSet_UPLOADFILE)]
         public string Path = string.Empty;
 
-        [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSet_URL)]
+        [Parameter(Mandatory = true, ParameterSetName = ParameterSet_URL)]
         public string Url = string.Empty;
 
         [Parameter(Mandatory = true, Position = 2, ParameterSetName = ParameterSet_UPLOADFILE)]
